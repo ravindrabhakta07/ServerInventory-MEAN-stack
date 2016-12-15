@@ -1,0 +1,49 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title" id="aplicationDetailsLabel">{{vm.modalApplication.applicationName}} Application
+      Details</h4>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="add-row-editable-table">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group col-md-10" style="padding-left: 0px !important;">
+                <input type="text" class="form-control" ng-model="vm.searchValue"
+                       placeholder="Search Server">
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="table table-bordered table-hover table-condensed">
+          <tr>
+            <td>Server Name</td>
+            <td>Server Database</td>
+            <td>DC</td>
+          </tr>
+          <tr ng-repeat="server in vm.modalApplication.servers | orderBy : 'serverName' | filter : vm.searchValue"
+              class="editable-row">
+            <td>
+              <span>{{ server.serverName || 'empty' }}</span>
+            </td>
+            <td>
+              <span>{{ server.dbName || 'empty' }}</span>
+            </td>
+            <td>
+              <span>{{ server.dc || 'empty' }}</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+  </div>
+</div>

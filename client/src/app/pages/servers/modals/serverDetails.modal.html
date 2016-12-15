@@ -1,0 +1,157 @@
+<div class="modal-content">
+  <form name="vm.viewServerForm" novalidate>
+    <div class="modal-header">
+      <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+        <em class="ion-ios-close-empty sn-link-close"></em>
+      </button>
+      <h4 class="modal-title" id="viewServerLabel">{{vm.modalServer.serverName}} Server Details</h4>
+    </div>
+    <div class="modal-body">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="serverName">Server Name</label>
+            <input type="text" class="form-control" id="serverName" name="servername"
+                   placeholder="Server Name"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.serverName" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="dbName">Server db name</label>
+            <input type="text" class="form-control" id="dbName" name="dbName"
+                   placeholder="Server db name"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.dbName" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="dc">DC</label>
+            <input type="text" class="form-control" id="dc" name="dc"
+                   placeholder="Server DC"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.dc" required>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="cpu">Server CPU</label>
+            <input type="text" class="form-control" id="cpu" name="cpu"
+                   placeholder="Server CPU"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.cpu" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="memory">Server Memory</label>
+            <input type="text" class="form-control" id="memory" name="memory"
+                   placeholder="Server Memory"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.memory" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="os">Operating System</label>
+            <input type="text" class="form-control" id="os" name="os"
+                   placeholder="Server OS"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.os" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="mac">MAC Address</label>
+            <input type="text" class="form-control" id="mac" name="mac"
+                   placeholder="Server MAC"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.mac" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="ipv4">Server ipv4</label>
+            <input type="text" class="form-control" id="ipv4" name="ipv4"
+                   placeholder="Server ipv4"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.ipv4" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="ipv6">Server ipv6</label>
+            <input type="text" class="form-control" id="ipv6" name="ipv6"
+                   placeholder="Server ipv6"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.ipv6" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="secZone">Security Zone</label>
+            <input type="text" class="form-control" id="secZone" name="secZone"
+                   placeholder="Security Zone"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.secZone" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="entityType">Entity Type</label>
+            <input type="text" class="form-control" id="entityType" name="entityType"
+                   placeholder="Entity Type"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.entityType" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="vlan">Virtual LAN</label>
+            <input type="text" class="form-control" id="vlan" name="vlan"
+                   placeholder="Virtual LAN"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.vlan" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="secVul">Server secVul</label>
+            <input type="text" class="form-control" id="secVul" name="secVul"
+                   placeholder="Server secVul"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.secVul" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="applicationName">Application</label>
+            <input type="text" class="form-control" id="applicationName" name="applicationName"
+                   placeholder="Server secVul"
+                   ng-disabled="true"
+                   ng-model="vm.modalServer.application.applicationName" required>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+    </div>
+  </form>
+</div>

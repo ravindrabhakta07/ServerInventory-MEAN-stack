@@ -1,0 +1,90 @@
+<div class="modal-content">
+  <form name="vm.updateApplicationForm" novalidate>
+    <div class="modal-header">
+      <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+        <em class="ion-ios-close-empty sn-link-close"></em>
+      </button>
+      <h4 class="modal-title" id="updateAplicationLabel">Update Application</h4>
+    </div>
+    <div class="modal-body">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateApplicationForm.applicationname.$invalid && (vm.updateApplicationForm.applicationname.$dirty || vm.updateApplicationForm.$submitted)}">
+            <label for="applicationName">Application Name</label>
+            <input type="text" class="form-control" id="applicationName" name="applicationname"
+                   placeholder="Application Name"
+                   ng-model="vm.modalApplication.applicationName" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateApplicationForm.applicationURL.$invalid && (vm.updateApplicationForm.applicationURL.$dirty || vm.updateApplicationForm.$submitted)}">
+            <label for="applicationURL">Application URL</label>
+            <input type="text" class="form-control" id="applicationURL" name="applicationURL"
+                   placeholder="Application URL"
+                   ng-model="vm.modalApplication.applicationURL" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateApplicationForm.tierType.$invalid && (vm.updateApplicationForm.tierType.$dirty || vm.updateApplicationForm.$submitted)}">
+            <label for="tierType">Tier Type</label>
+            <input type="text" class="form-control" id="tierType" name="tierType"
+                   placeholder="Application Tier Type"
+                   ng-model="vm.modalApplication.tierType" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateApplicationForm.serviceOwner.$invalid && (vm.updateApplicationForm.serviceOwner.$dirty || vm.updateApplicationForm.$submitted)}">
+            <label for="serviceOwner">Service Owner</label>
+            <input type="text" class="form-control" id="serviceOwner" name="serviceOwner"
+                   placeholder="Application Service Owner"
+                   ng-model="vm.modalApplication.serviceOwner" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateApplicationForm.onCallTeam.$invalid && (vm.updateApplicationForm.onCallTeam.$dirty || vm.updateApplicationForm.$submitted)}">
+            <label for="onCallTeam">Call Team</label>
+            <input type="text" class="form-control" id="onCallTeam" name="onCallTeam"
+                   placeholder="Application call team details"
+                   ng-model="vm.modalApplication.onCallTeam" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateApplicationForm.database.$invalid && (vm.updateApplicationForm.database.$dirty || vm.updateApplicationForm.$submitted)}">
+            <label for="database">Database</label>
+            <select id="database" name="database" class="form-control"
+                    title="Select Database" data-style="btn-primary"
+                    ng-model="vm.modalApplication.database" required>
+              <option value="">Please select</option>
+              <option value="Oracle">Oracle</option>
+              <option value="SQLServer">SQL SERVER</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+      <button type="submit" class="btn btn-primary"
+              ng-click="vm.updateApplication(vm.updateApplicationForm.$valid)">Update
+      </button>
+    </div>
+  </form>
+</div>

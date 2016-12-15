@@ -1,0 +1,83 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div ba-panel ba-panel-title="Servers" ba-panel-class="with-scroll">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="form-group select-page-size-wrap ">
+              <label>Rows on page
+                <select class="form-control selectpicker show-tick" title="Rows on page"
+                        selectpicker
+                        ng-model="vm.smartTablePageSize"
+                        ng-options="i for i in [5,10,15,20,25]">
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group select-page-size-wrap" ng-if="vm.userDetails.isAdmin">
+              <button class="btn btn-primary" ng-click="vm.openCreateServerModal()">Create
+                Server
+              </button>
+            </div>
+          </div>
+        </div>
+        <table class="table" st-safe-src="vm.safeServers" st-table="vm.servers">
+          <thead>
+          <tr class="sortable">
+            <th st-sort="serverName">Server Name</th>
+            <th st-sort="application.applicatinName">Application Name</th>
+            <th st-sort="dbName">Server database</th>
+            <th st-sort="dc">DC</th>
+            <th st-sort="cpu">CPU</th>
+            <th st-sort="memory">Memory</th>
+            <th st-sort="os">Operatin System</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+            <th colspan="8">
+              <input st-search="" class="form-control" placeholder="search Server" type="text"/>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="server in vm.servers">
+            <td>{{server.serverName}}</td>
+            <td>{{server.application.applicationName}}</td>
+            <td>{{server.dbName}}</td>
+            <td>{{server.dc}}</td>
+            <td>{{server.cpu}}</td>
+            <td>{{server.memory}}</td>
+            <td>{{server.os}}</td>
+            <td>
+              <a for="edit"
+                 ng-if="vm.userDetails.isAdmin"
+                 ng-click="vm.openEditModal(server._id)">
+                <i class="fa fa-pencil-square-o fa-4"></i></a>
+              &nbsp;&nbsp;
+              <a for="details"
+                 ng-click="vm.openServerModal(server._id)">
+                <i class="fa fa-info fa-4"></i></a>
+              &nbsp;&nbsp;
+              <a for="delete"
+                 ng-if="vm.userDetails.isAdmin"
+                 ng-click="vm.openConfirmationDialog(server._id)">
+                <i class="fa fa-trash-o fa-4"></i></a>
+            </td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="6" class="text-center">
+              <div st-pagination="" st-items-by-page="vm.smartTablePageSize"
+                   st-displayed-pages="5"></div>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+

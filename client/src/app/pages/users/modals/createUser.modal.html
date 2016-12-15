@@ -1,0 +1,60 @@
+<div class="modal-content">
+  <form name="vm.createUserForm" novalidate>
+    <div class="modal-header">
+      <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+        <em class="ion-ios-close-empty sn-link-close"></em>
+      </button>
+      <h4 class="modal-title" id="createUserLabel">Create User</h4>
+    </div>
+    <div class="modal-body">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstname"
+                   placeholder="First Name"
+                   ng-model="vm.modalUser.firstName">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastname"
+                   placeholder="Last Name" ng-model="vm.modalUser.lastName">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group"
+               ng-class="{'has-error': vm.createUserForm.email.$invalid && (vm.createUserForm.email.$dirty || vm.createUserForm.$submitted)}">
+            <label for="userEmail">User Email</label>
+            <input type="email" class="form-control" id="userEmail" name="email"
+                   placeholder="User Email" ng-model="vm.modalUser.email" required>
+            <span class="help-block error-block basic-block"
+                  ng-show="vm.createUserForm.email.$error.required">This field is required!</span>
+            <span class="help-block error-block basic-block"
+                  ng-show="vm.createUserForm.email.$error.email">Not a valid email!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.createUserForm.password.$invalid && (vm.createUserForm.password.$dirty || vm.createUserForm.$submitted)}">
+            <label for="userPassword">User Password</label>
+            <input type="password" class="form-control" id="userPassword" name="password"
+                   placeholder="password"
+                   ng-model="vm.modalUser.password" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+      <button type="submit" class="btn btn-primary"
+              ng-click="vm.createUser(vm.createUserForm.$valid)">Create
+      </button>
+    </div>
+  </form>
+</div>

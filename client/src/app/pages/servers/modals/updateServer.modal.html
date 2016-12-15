@@ -1,0 +1,182 @@
+<div class="modal-content">
+  <form name="vm.updateServerForm" novalidate>
+    <div class="modal-header">
+      <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+        <em class="ion-ios-close-empty sn-link-close"></em>
+      </button>
+      <h4 class="modal-title" id="updateServerLabel">Update Server</h4>
+    </div>
+    <div class="modal-body">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.servername.$invalid && (vm.updateServerForm.servername.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="serverName">Server Name</label>
+            <input type="text" class="form-control" id="serverName" name="servername"
+                   placeholder="Server Name"
+                   ng-model="vm.modalServer.serverName" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.dbName.$invalid && (vm.updateServerForm.dbName.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="dbName">Server db name</label>
+            <input type="text" class="form-control" id="dbName" name="dbName"
+                   placeholder="Server db name"
+                   ng-model="vm.modalServer.dbName" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.dc.$invalid && (vm.updateServerForm.dc.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="dc">DC</label>
+            <input type="text" class="form-control" id="dc" name="dc"
+                   placeholder="Server DC"
+                   ng-model="vm.modalServer.dc" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.cpu.$invalid && (vm.updateServerForm.cpu.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="cpu">Server CPU</label>
+            <input type="text" class="form-control" id="cpu" name="cpu"
+                   placeholder="Server CPU"
+                   ng-model="vm.modalServer.cpu" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.memory.$invalid && (vm.updateServerForm.memory.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="memory">Server Memory</label>
+            <input type="text" class="form-control" id="memory" name="memory"
+                   placeholder="Server Memory"
+                   ng-model="vm.modalServer.memory" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.os.$invalid && (vm.updateServerForm.os.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="os">Operating System</label>
+            <input type="text" class="form-control" id="os" name="os"
+                   placeholder="Server OS"
+                   ng-model="vm.modalServer.os" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.mac.$invalid && (vm.updateServerForm.mac.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="mac">MAC Address</label>
+            <input type="text" class="form-control" id="mac" name="mac"
+                   placeholder="Server MAC"
+                   ng-model="vm.modalServer.mac" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.ipv4.$invalid && (vm.updateServerForm.ipv4.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="ipv4">Server ipv4</label>
+            <input type="text" class="form-control" id="ipv4" name="ipv4"
+                   placeholder="Server ipv4"
+                   ng-model="vm.modalServer.ipv4" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.ipv6.$invalid && (vm.updateServerForm.ipv6.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="ipv6">Server ipv6</label>
+            <input type="text" class="form-control" id="ipv6" name="ipv6"
+                   placeholder="Server ipv6"
+                   ng-model="vm.modalServer.ipv6" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.secZone.$invalid && (vm.updateServerForm.secZone.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="secZone">Security Zone</label>
+            <input type="text" class="form-control" id="secZone" name="secZone"
+                   placeholder="Security Zone"
+                   ng-model="vm.modalServer.secZone" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.entityType.$invalid && (vm.updateServerForm.entityType.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="entityType">Entity Type</label>
+            <input type="text" class="form-control" id="entityType" name="entityType"
+                   placeholder="Entity Type"
+                   ng-model="vm.modalServer.entityType" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.vlan.$invalid && (vm.updateServerForm.vlan.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="vlan">Virtual LAN</label>
+            <input type="text" class="form-control" id="vlan" name="vlan"
+                   placeholder="Virtual LAN"
+                   ng-model="vm.modalServer.vlan" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.secVul.$invalid && (vm.updateServerForm.secVul.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="secVul">Server secVul</label>
+            <input type="text" class="form-control" id="secVul" name="secVul"
+                   placeholder="Server secVul"
+                   ng-model="vm.modalServer.secVul" required>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.updateServerForm.applicationId.$invalid && (vm.updateServerForm.applicationId.$dirty || vm.updateServerForm.$submitted)}">
+            <label for="applicationId">Application</label>
+            <select id="applicationId" name="applicationId" class="form-control"
+                    title="Application Select" data-style="btn-primary"
+                    ng-model="vm.modalServer.applicationId"
+                    ng-options="a._id as a.applicationName for a in vm.applications" data-container="body"
+                    selectpicker required>
+              <option value="" selected>Select Application</option>
+            </select>
+            <span class="help-block error-block basic-block">This field is required!</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+      <button type="submit" class="btn btn-primary"
+              ng-click="vm.updateServer(vm.updateServerForm.$valid)">Update
+      </button>
+    </div>
+  </form>
+</div>

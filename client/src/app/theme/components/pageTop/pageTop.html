@@ -1,0 +1,19 @@
+<div class="page-top clearfix" scroll-position="scrolled" max-height="50" ng-class="{'scrolled': scrolled}">
+  <a href="#/applications" class="al-logo clearfix"><span>Server</span>Inventory</a>
+  <a href class="collapse-menu-link ion-navicon" ba-sidebar-toggle-menu></a>
+
+  <a class="al-logo clearfix" style="float: right !important;"><span>{{vm.getUserName()}}</span></a>
+  <div class="user-profile clearfix">
+
+    <div class="al-user-profile" uib-dropdown>
+      <a uib-dropdown-toggle class="profile-toggle-link">
+        <img ng-src="{{:: vm.userProfilePic() }}">
+      </a>
+      <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
+        <li><i class="dropdown-arr"></i></li>
+        <li><a ng-click="vm.logout()" class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>

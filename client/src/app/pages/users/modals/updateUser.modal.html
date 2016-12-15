@@ -1,0 +1,53 @@
+<div class="modal-content">
+  <form name="vm.updateUserForm" novalidate>
+    <div class="modal-header">
+      <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+        <em class="ion-ios-close-empty sn-link-close"></em>
+      </button>
+      <h4 class="modal-title" id="updateUserLabel">Update User</h4>
+    </div>
+    <div class="modal-body">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstname"
+                   placeholder="First Name"
+                   ng-model="vm.modalUser.firstName">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastname"
+                   placeholder="Last Name" ng-model="vm.modalUser.lastName">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group"
+               ng-class="{'has-error': vm.updateUserForm.email.$invalid && (vm.updateUserForm.email.$dirty || vm.updateUserForm.$submitted)}">
+            <label for="userEmail">User Email</label>
+            <input type="email" class="form-control" id="userEmail" name="email"
+                   placeholder="User Email" ng-model="vm.modalUser.email" required>
+            <span class="help-block error-block basic-block"
+                  ng-show="vm.updateUserForm.email.$error.required">This field is required!</span>
+            <span class="help-block error-block basic-block"
+                  ng-show="vm.updateUserForm.email.$error.email">Not a valid email!</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+      <button type="submit" class="btn btn-primary"
+              ng-click="vm.updateUser(vm.updateUserForm.$valid)">Update
+      </button>
+    </div>
+  </form>
+</div>

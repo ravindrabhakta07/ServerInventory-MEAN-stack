@@ -1,0 +1,73 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div ba-panel ba-panel-title="Search" ba-panel-class="with-scroll">
+        <div class="add-row-editable-table">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group col-md-10" style="padding-left: 0px !important;">
+                <input type="text" class="form-control" ng-model="vm.searchValue"
+                       placeholder="Search Application or Server">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group col-md-10" style="padding-left: 0px !important;">
+                <button type="button" class="btn btn-primary" ng-click="vm.searchResults(vm.searchValue)">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-show="vm.results.length > 0">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group select-page-size-wrap ">
+                <label>Rows on page
+                  <select class="form-control selectpicker show-tick" title="Rows on page"
+                          selectpicker
+                          ng-model="vm.smartTablePageSize"
+                          ng-options="i for i in [5,10,15,20,25]">
+                  </select>
+                </label>
+              </div>
+            </div>
+          </div>
+          <table class="table" st-safe-src="vm.safeServers" st-table="vm.servers">
+            <thead>
+            <tr class="sortable">
+              <th st-sort="serverName">Server Name</th>
+              <th st-sort="application.applicatinName">Application Name</th>
+              <th>Details</th>
+            </tr>
+            <tr>
+              <th colspan="8">
+                <input st-search="" class="form-control" placeholder="search Server" type="text"/>
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="server in vm.servers">
+              <td>{{server.serverName}}</td>
+              <td>{{server.application.applicationName}}</td>
+              <td>
+
+                <button class="btn btn-primary editable-table-button btn-xs" ng-click="vm.openServerModal(server._id)">Server</button>
+
+                <button class="btn btn-primary editable-table-button btn-xs" ng-click="vm.openApplicationModal(server.application._id)">Application</button>
+              </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <td colspan="6" class="text-center">
+                <div st-pagination="" st-items-by-page="vm.smartTablePageSize"
+                     st-displayed-pages="5"></div>
+              </td>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

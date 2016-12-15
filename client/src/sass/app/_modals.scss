@@ -1,0 +1,126 @@
+
+.modal-content {
+  border-radius: 5px;
+  border: none;
+  color: $dropdown-text;
+}
+
+.modal-header {
+  color: $label-text;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #209e91;
+  .modal-title {
+    color: #ffffff;
+  }
+}
+
+.modal-buttons {
+  margin-top: -12px;
+  margin-right: -22px;
+  button {
+    float: left;
+    margin-right: 24px;
+    margin-top: 12px;
+  }
+  &.same-width {
+    button {
+      width: 160px;
+      text-align: center;
+    }
+  }
+}
+
+.organization_box {
+  border-right: 1px dashed #b7b7b7;
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+  color: #a94442 !important;
+}
+
+.has-error .form-control {
+  border: 1px solid #ed7878 !important;
+}
+
+$modal-input-border: #e7e7e7;
+
+.modal {
+  text-align: center;
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    vertical-align: middle;
+    .form-control {
+      color: $github-color;
+      background-color: transparent;
+      border: 1px solid $modal-input-border;
+      @include placeholderStyle($dropdown-text, 0.9);
+    }
+    .modal-body p, .modal-body div, .modal-body span {
+      color: $dropdown-text;
+    }
+  }
+  .modal-header {
+    //border: none;
+    .close {
+      margin-top: -5px;
+    }
+  }
+
+  .modal-header-bg {
+    background: #079e98;
+    border-color: #088679;
+    .close {
+      margin-top: -5px;
+    }
+  }
+  .modal-footer {
+    border: none;
+    padding-top: 0;
+  }
+  .modal-icon {
+    margin-right: 3px;
+  }
+  .sn-link-close {
+    color: $dropdown-text;
+    font-size: 30px;
+    &:hover {
+      color: $danger;
+    }
+  }
+}
+
+@media screen and (min-width: $resM) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.message-modal {
+  .modal-header {
+    text-align: center;
+    i {
+      font-size: 32px;
+    }
+  }
+  .modal-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 12px;
+    margin-top: 18px;
+  }
+  .modal-body {
+    text-align: center;
+    padding: 0;
+    font-size: 14px;
+  }
+  .modal-footer {
+    margin: 24px 0 12px;
+    text-align: center;
+  }
+}
