@@ -6,19 +6,14 @@
   /** @ngInject */
   function loginCtrl($window, $cookies, urls, loginService, toastr) {
 
+    if(!$cookies.get('userRole') && !$cookies.get('isLoggedOut'))
+      authenticateUser();
+
     var vm = this;
-    vm.isAdminLogin = false;
-    vm.showLoginForm = showLoginForm;
-    vm.authenticateUser = authenticateUser;
     vm.authenticateAdmin = authenticateAdmin;
     vm.logout = logout;
     vm.userProfilePic = userProfilePic;
     vm.getUserName = getUserName;
-
-    function showLoginForm() {
-      vm.isAdminLogin = true;
-      return false;
-    }
 
     function authenticateUser() {
 
@@ -67,18 +62,23 @@
       }
     }
 
+    function getUserRole() {
+      return $cookies.get('userRole');
+    }
+
     function logout() {
       var cookies = $cookies.getAll();
       angular.forEach(cookies, function (v, k) {
         $cookies.remove(k);
       });
+      var dateToday = new Date();
+      dateToday.setHours(dateToday.getHours() + 2);
+      $cookies.put('isLoggedOut', true, [{expires: dateToday}]);
+
       $window.location = urls.AUTH_URL;
     }
 
     function userProfilePic() {
-      //var userDetails = JSON.parse($cookies.get('userDetails'));
-      //var userPic = userDetails && userDetails.picture && userDetails.picture[0];
-      //return userPic? urls.BASE + userPic : urls.USER_PROFILE;
       return urls.USER_PROFILE;
     }
 

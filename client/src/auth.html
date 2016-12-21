@@ -32,9 +32,9 @@
 </head>
 <body>
 <main class="auth-main" ng-controller="loginCtrl as vm">
-  <div class="auth-block" >
+  <div class="auth-block" ng-cloak="">
     <h1>Sign in to Server Inventory</h1>
-    <div for="loginButtons" class="form-horizontal">
+    <!--<div for="loginButtons" class="form-horizontal">
       <div class="row">
         <div class="col-sm-3 col-sm-offset-3">
           <button id="userSignIn"
@@ -51,47 +51,49 @@
           </button>
         </div>
       </div>
-    </div>
-  </div>
-  <form ng-show="vm.isAdminLogin" class="auth-block" name="vm.loginForm" novalidate>
-    <div>
-      <div class="form-horizontal">
-        <div class="form-group"
-             ng-class="{'has-error': vm.loginForm.email.$invalid && (vm.loginForm.email.$dirty || vm.loginForm.$submitted)}">
-          <label for="userEmail" class="col-sm-2 control-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="userEmail" name="email"
-                   placeholder="Email" ng-model="vm.userCredentials.email" required>
-            <span class="help-block error-block basic-block"
-                  ng-show="vm.loginForm.email.$error.required">This field is required!</span>
-            <span class="help-block error-block basic-block"
-                  ng-show="vm.loginForm.email.$error.email">Not valid email!</span>
+    </div>-->
+
+    <form name="vm.loginForm" novalidate>
+      <div>
+        <div class="form-horizontal">
+          <div class="form-group"
+               ng-class="{'has-error': vm.loginForm.email.$invalid && (vm.loginForm.email.$dirty || vm.loginForm.$submitted)}">
+            <label for="userEmail" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="userEmail" name="email"
+                     placeholder="Email" ng-model="vm.userCredentials.email" required>
+              <span class="help-block error-block basic-block"
+                    ng-show="vm.loginForm.email.$error.required">This field is required!</span>
+              <span class="help-block error-block basic-block"
+                    ng-show="vm.loginForm.email.$error.email">Not valid email!</span>
+            </div>
           </div>
-        </div>
-        <div class="form-group has-feedback"
-             ng-class="{'has-error': vm.loginForm.password.$invalid && (vm.loginForm.password.$dirty || vm.loginForm.$submitted)}">
-          <label for="userPassword" class="col-sm-2 control-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="userPassword" name="password"
-                   placeholder="password"
-                   ng-model="vm.userCredentials.password" required>
-            <span class="help-block error-block basic-block">This field is required!</span>
+          <div class="form-group has-feedback"
+               ng-class="{'has-error': vm.loginForm.password.$invalid && (vm.loginForm.password.$dirty || vm.loginForm.$submitted)}">
+            <label for="userPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="userPassword" name="password"
+                     placeholder="password"
+                     ng-model="vm.userCredentials.password" required>
+              <span class="help-block error-block basic-block">This field is required!</span>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-sm-2 col-sm-offset-4">
-              <button id="signIn"
-                      ng-click="vm.authenticateAdmin(vm.loginForm.$valid)"
-                      class="btn btn-default btn-auth">
-                Sign in
-              </button>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-2 col-sm-offset-4">
+                <button id="signIn"
+                        ng-click="vm.authenticateAdmin(vm.loginForm.$valid)"
+                        class="btn btn-default btn-auth">
+                  Sign in
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
+
 </main>
 
 <!-- build:js(src) scripts/vendor.js -->

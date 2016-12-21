@@ -3,7 +3,7 @@
   <a href class="collapse-menu-link ion-navicon" ba-sidebar-toggle-menu></a>
 
   <a class="al-logo clearfix" style="float: right !important;"><span>{{vm.getUserName()}}</span></a>
-  <div class="user-profile clearfix">
+  <div ng-if="vm.getUserRole() == 'admin' " class="user-profile clearfix">
 
     <div class="al-user-profile" uib-dropdown>
       <a uib-dropdown-toggle class="profile-toggle-link">

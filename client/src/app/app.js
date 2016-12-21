@@ -23,6 +23,22 @@ angular.module('BlurAdmin', [
   USER_PROFILE: 'assets/pictures/pic-user-profile2.png'
 }).run(function ($rootScope, $cookies, $window, $state, toastr, urls) {
 
+  function authenticateUser() {
+
+    var user = {
+      isAdmin: false
+    };
+    var dateToday = new Date();
+    dateToday.setHours(dateToday.getHours() + 2);
+    $cookies.put('userDetails', JSON.stringify(user), [{expires: dateToday}]);
+    $cookies.put('userRole', "user", [{expires: dateToday}]);
+    $window.location = urls.BASE + '/#/applications';
+
+  }
+
+  if(!$cookies.get('userRole') && !$cookies.get('isLoggedOut'))
+    authenticateUser();
+
   if ($window.location.pathname == "/auth.html")
     return;
 
